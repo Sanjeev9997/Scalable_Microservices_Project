@@ -1,0 +1,12 @@
+package com.example.product_service.Repository;
+
+import com.example.product_service.model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ProductRepository extends JpaRepository<Product,Long> {
+
+    public List<Product> findByDescription(String description);
+    public List<Product> findByName(String name);
+}

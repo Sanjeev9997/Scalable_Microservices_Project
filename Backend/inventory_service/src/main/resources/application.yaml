@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: inventory-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inventory_db
+    username: postgres
+    password: Amit@9997
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  security:
+    user:
+      name: sanjeev
+      password: 12345
+
+  spring:
+    data:
+      redis:
+        host: localhost
+        port: 6379
+        timeout: 2000ms
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+
+  endpoint:
+    health:
+      show-details: always
+
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http:
+          server:
+            requests: true
+
+resilience4j:
+
+  circuitbreaker:
+    instances:
+
+      productService:
+        registerHealthIndicator: true
+
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+
+        minimumNumberOfCalls: 5
+
+        failureRateThreshold: 50
+
+        waitDurationInOpenState: 10s
+
+        permittedNumberOfCallsInHalfOpenState: 3
