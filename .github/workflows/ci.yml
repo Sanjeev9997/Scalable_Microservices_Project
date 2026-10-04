@@ -1,0 +1,78 @@
+name: Project CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+
+  # ==========================================
+  # FRONTEND
+  # ==========================================
+
+  frontend:
+    name: Frontend CI
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build frontend
+        run: npm run build
+
+
+  # ==========================================
+  # BACKEND
+  # ==========================================
+
+  backend:
+    name: Backend CI
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+
+      - name: Build and test backend services
+        shell: bash
+        run: |
+          for pom in backend/*/pom.xml
+          do
+            echo "=========================================="
+            echo "Building $pom"
+            echo "=========================================="
+
+            mvn -f "$pom" clean verify
+          done
