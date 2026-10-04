@@ -6,6 +6,7 @@ import com.example.order_service.dto.*;
 import com.example.order_service.entity.Order;
 import com.example.order_service.entity.OrderItem;
 import com.example.order_service.enums.OrderStatus;
+import com.example.order_service.enums.PaymentMethod;
 import com.example.order_service.enums.PaymentStatus;
 import com.example.order_service.enums.ShipmentStatus;
 import com.example.order_service.redis.IdempotencyService;
@@ -98,9 +99,11 @@ public class OrderServiceImpl implements OrderService {
             redisLockService.acquireLock(orderItem.getProductId());
         }
         log.info("lock acquired");
-        log.info("publishing order created event for payment service");
-        orderEventProducer.publishOrderCreatedEvent(new OrderCreatedEvent(savedOrder.getOrderId(),savedOrder.getUserId(),savedOrder.getTotalAmount(),request.getPaymentMethod()));
-        log.info("published order updated event for payment service");
+        if(request.getPaymentMethod()!= PaymentMethod.COD) {
+            log.info("publishing order created event for payment service");
+            orderEventProducer.publishOrderCreatedEvent(new OrderCreatedEvent(savedOrder.getOrderId(), savedOrder.getUserId(), savedOrder.getTotalAmount(), request.getPaymentMethod()));
+            log.info("published order updated event for payment service");
+        }
         log.info("sending notification event");
         notificationEventProducer.sendNotificationEvent(new NotificationRequest(savedOrder.getOrderId(),OrderStatus.SHIPPED));
         log.info("Notification event produced");

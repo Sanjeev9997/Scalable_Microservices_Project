@@ -1,0 +1,868 @@
+/* ========================================
+   CHECKOUT PAGE
+======================================== */
+
+.checkout-page {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 40px 30px 60px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.checkout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.checkout-header h1 {
+  margin: 0 0 6px;
+  color: #111827;
+  font-size: 30px;
+}
+
+.checkout-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.back-to-cart {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-to-cart:hover {
+  text-decoration: underline;
+}
+
+
+/* ========================================
+   LAYOUT
+======================================== */
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  gap: 25px;
+  align-items: start;
+}
+
+.checkout-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.checkout-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 25px;
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.section-number {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #2563eb;
+  color: white;
+
+  border-radius: 50%;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.section-heading h2 {
+  margin: 0 0 4px;
+  color: #111827;
+  font-size: 18px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+
+/* ========================================
+   SAVED ADDRESSES
+======================================== */
+
+.saved-addresses {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+/* ========================================
+   ADDRESS CARD
+======================================== */
+
+.address-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  padding: 17px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.address-card:hover {
+  border-color: #2563eb;
+  background: #f8fbff;
+}
+
+.address-card.selected {
+  border: 2px solid #2563eb;
+  background: #eff6ff;
+  padding: 16px;
+}
+
+
+/* ========================================
+   ADDRESS RADIO
+======================================== */
+
+.address-card input[type="radio"] {
+  margin-top: 4px;
+
+  width: 16px;
+  height: 16px;
+
+  accent-color: #2563eb;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   ADDRESS CONTENT
+======================================== */
+
+.address-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.address-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 8px;
+}
+
+.address-card-header strong {
+  color: #111827;
+  font-size: 14px;
+}
+
+.address-card-content p {
+  margin: 5px 0;
+
+  color: #6b7280;
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* ========================================
+   DEFAULT ADDRESS BADGE
+======================================== */
+
+.default-address {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 8px;
+
+  border-radius: 5px;
+
+  background: #dcfce7;
+  color: #15803d;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* ========================================
+   ADD ADDRESS BUTTON
+======================================== */
+
+.add-address-link {
+  width: fit-content;
+
+  margin-top: 2px;
+
+  border: none;
+  background: transparent;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 5px 0;
+
+  transition: 0.2s;
+}
+
+.add-address-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+
+/* ========================================
+   NO ADDRESS
+======================================== */
+
+.no-address {
+  text-align: center;
+
+  padding: 30px 20px;
+
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+
+  background: #f9fafb;
+}
+
+.no-address-icon {
+  font-size: 40px;
+
+  margin-bottom: 10px;
+}
+
+.no-address h3 {
+  margin: 0 0 8px;
+
+  color: #111827;
+
+  font-size: 17px;
+}
+
+.no-address p {
+  max-width: 450px;
+
+  margin: 0 auto 20px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   ADD NEW ADDRESS BUTTON
+======================================== */
+
+.add-address-btn {
+  border: none;
+
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.add-address-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* ========================================
+   ADDRESS LOADING
+======================================== */
+
+.address-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 120px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   DELIVERY
+======================================== */
+
+.delivery-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.delivery-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.delivery-option:hover,
+.delivery-option.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.delivery-option input {
+  accent-color: #2563eb;
+}
+
+.delivery-icon {
+  font-size: 25px;
+}
+
+.delivery-details {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.delivery-details strong {
+  color: #111827;
+  font-size: 14px;
+}
+
+.delivery-details span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.delivery-price {
+  color: #111827;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   PAYMENT
+======================================== */
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 15px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.payment-option:hover,
+.payment-option.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.payment-option input {
+  accent-color: #2563eb;
+}
+
+.payment-icon {
+  font-size: 22px;
+}
+
+.payment-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.payment-content strong {
+  color: #111827;
+  font-size: 14px;
+}
+
+.payment-content small {
+  color: #6b7280;
+  font-size: 11px;
+}
+
+
+/* ========================================
+   PAYMENT PLACEHOLDER
+======================================== */
+
+.card-placeholder {
+  margin-top: 15px;
+
+  padding: 15px;
+
+  background: #f9fafb;
+
+  border: 1px dashed #d1d5db;
+
+  border-radius: 8px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.checkout-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.order-summary h2 {
+  margin: 0 0 20px;
+
+  color: #111827;
+
+  font-size: 20px;
+}
+
+
+/* ========================================
+   SUMMARY ITEMS
+======================================== */
+
+.summary-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.summary-product-image {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f3f4f6;
+
+  border-radius: 8px;
+
+  font-size: 25px;
+
+  flex-shrink: 0;
+}
+
+.summary-product-info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.summary-product-info strong {
+  color: #111827;
+
+  font-size: 12px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summary-product-info span {
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.summary-product-info small {
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.summary-item > strong {
+  color: #111827;
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   SUMMARY
+======================================== */
+
+.summary-divider {
+  height: 1px;
+
+  background: #e5e7eb;
+
+  margin: 20px 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.summary-row strong {
+  color: #111827;
+}
+
+.discount-text {
+  color: #16a34a !important;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.summary-total span {
+  color: #374151;
+  font-weight: 600;
+}
+
+.summary-total strong {
+  color: #111827;
+  font-size: 22px;
+}
+
+
+/* ========================================
+   COUPON
+======================================== */
+
+.coupon-box {
+  display: flex;
+
+  gap: 8px;
+
+  margin-bottom: 18px;
+}
+
+.coupon-box input {
+  min-width: 0;
+
+  flex: 1;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 7px;
+
+  padding: 10px;
+
+  outline: none;
+
+  font-size: 12px;
+
+  box-sizing: border-box;
+}
+
+.coupon-box input:focus {
+  border-color: #2563eb;
+}
+
+.coupon-box button {
+  padding: 0 15px;
+
+  border: 1px solid #2563eb;
+
+  background: white;
+
+  color: #2563eb;
+
+  border-radius: 7px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.coupon-box button:hover {
+  background: #eff6ff;
+}
+
+
+/* ========================================
+   PLACE ORDER
+======================================== */
+
+.place-order-btn {
+  width: 100%;
+
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 14px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.place-order-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* Disabled when no address selected */
+
+.place-order-btn:disabled {
+  background: #9ca3af;
+
+  cursor: not-allowed;
+
+  opacity: 0.7;
+}
+
+.place-order-btn:disabled:hover {
+  background: #9ca3af;
+}
+
+
+/* ========================================
+   SECURITY
+======================================== */
+
+.secure-payment {
+  margin-top: 14px;
+
+  color: #9ca3af;
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 950px) {
+
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-sidebar {
+    position: static;
+  }
+
+}
+
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+  .checkout-page {
+    padding: 25px 15px 40px;
+  }
+
+  .checkout-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .checkout-header h1 {
+    font-size: 26px;
+  }
+
+  .checkout-card {
+    padding: 18px;
+  }
+
+  .section-heading {
+    gap: 10px;
+  }
+
+  .section-number {
+    width: 30px;
+    height: 30px;
+
+    font-size: 13px;
+  }
+
+  .section-heading h2 {
+    font-size: 17px;
+  }
+
+  .address-card {
+    padding: 14px;
+  }
+
+  .address-card.selected {
+    padding: 13px;
+  }
+
+  .address-card-header {
+    flex-wrap: wrap;
+  }
+
+  .address-card-content p {
+    font-size: 12px;
+  }
+
+  .delivery-option {
+    padding: 13px;
+  }
+
+  .payment-option {
+    padding: 13px;
+  }
+
+  .summary-total strong {
+    font-size: 20px;
+  }
+
+}
+
+
+/* ========================================
+   VERY SMALL SCREENS
+======================================== */
+
+@media (max-width: 400px) {
+
+  .checkout-page {
+    padding: 20px 10px 30px;
+  }
+
+  .checkout-card {
+    padding: 15px;
+  }
+
+  .address-card {
+    gap: 10px;
+  }
+
+  .address-card-content p {
+    font-size: 11px;
+  }
+
+  .default-address {
+    font-size: 9px;
+  }
+
+  .summary-product-image {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+}

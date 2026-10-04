@@ -1,0 +1,46 @@
+@import "../admin-common.css";
+
+.users-page {
+  padding-bottom: 40px;
+}
+
+/* User Cell */
+
+.user-cell {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.user-cell div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.user-cell small {
+  color: #9ca3af;
+
+  font-size: 9px;
+}

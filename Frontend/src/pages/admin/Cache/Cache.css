@@ -1,0 +1,184 @@
+@import "../admin-common.css";
+
+.cache-page {
+  padding-bottom: 40px;
+}
+
+/* Stats */
+
+.cache-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.cache-stat-card {
+  padding: 18px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 11px;
+}
+
+.cache-stat-card span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+.cache-stat-card strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #111827;
+
+  font-size: 22px;
+}
+
+.cache-stat-card small {
+  color: #16a34a;
+
+  font-size: 9px;
+}
+
+/* Grid */
+
+.cache-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.cache-panel {
+  padding: 22px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+}
+
+.cache-panel h2 {
+  margin: 0 0 18px;
+
+  color: #111827;
+
+  font-size: 16px;
+}
+
+/* Redis Status */
+
+.redis-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 13px;
+
+  margin-bottom: 20px;
+
+  border-radius: 8px;
+
+  background: #f0fdf4;
+}
+
+.redis-status strong {
+  color: #166534;
+
+  font-size: 12px;
+}
+
+/* Redis Details */
+
+.redis-details {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.redis-details div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.redis-details span {
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+.redis-details strong {
+  color: #374151;
+
+  font-size: 11px;
+}
+
+/* Objects */
+
+.cache-object {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.cache-object:last-child {
+  border-bottom: none;
+}
+
+.cache-object span {
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+.cache-object strong {
+  color: #111827;
+
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .cache-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cache-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .cache-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .redis-details {
+    grid-template-columns: 1fr;
+  }
+}

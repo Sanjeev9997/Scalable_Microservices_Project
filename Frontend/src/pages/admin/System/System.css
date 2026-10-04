@@ -1,0 +1,133 @@
+@import "../admin-common.css";
+
+.system-page {
+  padding-bottom: 40px;
+}
+
+/* Architecture */
+
+.architecture {
+  padding: 35px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 14px;
+
+  min-height: 500px;
+}
+
+/* Gateway */
+
+.gateway-node {
+  max-width: 280px;
+
+  margin: 0 auto;
+}
+
+.architecture-node {
+  padding: 20px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe3ef;
+
+  border-radius: 12px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.architecture-node h3 {
+  margin: 10px 0;
+
+  color: #111827;
+
+  font-size: 13px;
+}
+
+.node-icon {
+  font-size: 25px;
+}
+
+/* Gateway line */
+
+.connection-line {
+  width: 2px;
+  height: 45px;
+
+  margin: 0 auto;
+
+  background: #93c5fd;
+}
+
+/* Core services */
+
+.core-services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 14px;
+}
+
+/* Support */
+
+.support-label {
+  margin: 35px 0 15px;
+
+  color: #9ca3af;
+
+  text-align: center;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.support-services-grid {
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+}
+
+.support-node {
+  background: #f9fafb;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .core-services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .core-services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .architecture {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .core-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .support-services-grid {
+    grid-template-columns: 1fr;
+  }
+}

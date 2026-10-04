@@ -11,6 +11,23 @@ spring:
               enabled: true
               lower-case-service-id: true
 
+          globalcors:
+            add-to-simple-url-handler-mapping: true
+            cors-configurations:
+              '[/**]':
+                allowedOrigins:
+                  - "http://localhost:3000"
+                allowedMethods:
+                  - GET
+                  - POST
+                  - PUT
+                  - DELETE
+                  - PATCH
+                  - OPTIONS
+                allowedHeaders:
+                  - "*"
+                allowCredentials: true
+
 jwt:
   secret: 1234567890123456789012345678901234567890123456789012345678901234
   expiration: 86400000

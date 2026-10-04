@@ -1,5 +1,6 @@
 package com.example.auth_service.feign_client;
 
+
 import com.example.auth_service.dto.UserLoginDto;
 import com.example.auth_service.dto.UserRequest;
 import com.example.auth_service.dto.UserResponse;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "user-service")
 public interface UserClient {
 
-    @GetMapping("/api/users/email/{email}")
-    public UserLoginDto getUserByEmail(@PathVariable String email);
+    @GetMapping("/api/users/login/email/{email}")
+    public UserLoginDto getUserByEmailForLogin(@PathVariable String email);
 
    @PostMapping("/api/users/register")
    public UserResponse createUser(@RequestBody UserRequest userRequest);

@@ -1,0 +1,165 @@
+@import "../admin-common.css";
+
+.resilience-page {
+  padding-bottom: 40px;
+}
+
+/* Overview */
+
+.resilience-overview {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.resilience-overview > div {
+  padding: 18px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 11px;
+}
+
+.resilience-overview span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+.resilience-overview strong {
+  color: #111827;
+
+  font-size: 21px;
+}
+
+/* Cards */
+
+.resilience-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.resilience-card {
+  padding: 20px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+}
+
+.resilience-card-header {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding-bottom: 18px;
+
+  margin-bottom: 18px;
+
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.resilience-card-header h2 {
+  margin: 0 0 4px;
+
+  color: #111827;
+
+  font-size: 15px;
+}
+
+.resilience-card-header p {
+  margin: 0;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+.circuit-state {
+  padding: 5px 8px;
+
+  border-radius: 5px;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.circuit-state.closed {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.circuit-state.open {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.circuit-state.half_open {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+/* Metrics */
+
+.resilience-metrics {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+}
+
+.resilience-metrics div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.resilience-metrics span {
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+.resilience-metrics strong {
+  color: #111827;
+
+  font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+  .resilience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resilience-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .resilience-grid,
+  .resilience-overview {
+    grid-template-columns: 1fr;
+  }
+}

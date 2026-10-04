@@ -2,30 +2,29 @@ spring:
   application:
     name: eureka-server
 
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-
 server:
   port: 8761
 
+eureka:
+  instance:
+    hostname: localhost # Add this line
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ # Add this block
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info,metrics,prometheus
-
   endpoint:
     health:
       show-details: always
-
   metrics:
     distribution:
       percentiles-histogram:
         http:
           server:
             requests: true
-
-

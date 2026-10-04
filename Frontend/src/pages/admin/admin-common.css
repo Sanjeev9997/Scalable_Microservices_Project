@@ -1,0 +1,182 @@
+/* =========================================================
+   COMMON ADMIN STYLES
+   ========================================================= */
+
+.admin-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.admin-label {
+  display: inline-block;
+
+  margin-bottom: 7px;
+
+  color: #2563eb;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.admin-page-header h1 {
+  margin: 0 0 6px;
+
+  color: #111827;
+
+  font-size: 29px;
+  line-height: 1.2;
+}
+
+.admin-page-header p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.primary-admin-btn {
+  border: none;
+  border-radius: 8px;
+
+  padding: 11px 17px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.primary-admin-btn:hover {
+  background: #1d4ed8;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.admin-table-card {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 12px;
+}
+
+.admin-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 800px;
+}
+
+.admin-table thead {
+  background: #f9fafb;
+}
+
+.admin-table th {
+  padding: 14px 18px;
+
+  color: #9ca3af;
+
+  text-align: left;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.4px;
+
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 16px 18px;
+
+  border-top: 1px solid #f3f4f6;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.admin-table td strong {
+  color: #111827;
+}
+
+.admin-table tr:hover td {
+  background: #fafafa;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.view-btn {
+  padding: 7px 12px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 6px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background: #dbeafe;
+}
+
+/* =========================================================
+   PAGE BACKGROUND
+   ========================================================= */
+
+.admin-dashboard,
+.admin-products,
+.inventory-page,
+.admin-orders,
+.users-page,
+.services-page,
+.events-page,
+.cache-page,
+.resilience-page,
+.system-page {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .admin-page-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .admin-page-header h1 {
+    font-size: 25px;
+  }
+}

@@ -68,7 +68,16 @@ public class UserServiceImpl implements UserService {
                 .build();
 
     }
-
+    @Cacheable(value = "users",key = "#email")
+    @Override
+    public UserResponse getUserByEmail(String email){
+        logger.info("Fetch by email called");
+        logger.info("user fetching vai email.");
+        User user=userRepository.findByEmail(email);
+        logger.info("user fetched via email.");
+        logger.info("Fetch by completed email.");
+        return mapToresponse(user);
+    }
     @Override
     public List<UserResponse> getAllUsers() {
         logger.info("getAllUsers called");

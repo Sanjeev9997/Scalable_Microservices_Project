@@ -47,7 +47,7 @@ public class InventoryServiceImpl implements InventoryService {
     public InventoryResponse getInventory(Long productId) {
         log.info("getInventory called");
         log.info("Fetching product inventory");
-        Inventory inventory = inventoryRepository.findByProductId(productId).orElseThrow(()->new RuntimeException("Product not found"));
+        Inventory inventory = inventoryRepository.findByProductId(productId).orElseThrow(()->new RuntimeException("Product not found for product id"+productId));
         log.info("Inventory fetched");
         log.info("getInventory completed");
         return mapToResponse(inventory);

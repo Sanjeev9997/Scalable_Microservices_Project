@@ -1,0 +1,13 @@
+@import "../admin-common.css";
+
+.services-page {
+  padding-bottom: 40px;
+}
+
+.services-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}

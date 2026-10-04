@@ -65,13 +65,23 @@ public class CartServiceImpl implements CartService {
         log.info("cart fetching");
         Cart cart = cartRepository.findByUserId(userId).orElseGet(()->new Cart());
         log.info("cart fetched");
-        cart.setUserId(userId);
-        CartItem cartItem = new CartItem();
-        cartItem.setProductId(request.getProductId());
-        cartItem.setQuantity(request.getQuantity());
-        cartItem.setPrice(product.getPrice());
-        cartItem.setCart(cart);
-        cart.getCartItems().add(cartItem);
+        boolean already=false;
+        for(CartItem item:cart.getCartItems()){
+            if(item.getProductId()== request.getProductId()){
+                item.setQuantity(item.getQuantity()+request.getQuantity());
+                already=true;
+            }
+        }
+        if(!already) {
+            cart.setUserId(userId);
+            CartItem cartItem = new CartItem();
+            cartItem.setProductId(request.getProductId());
+            cartItem.setQuantity(request.getQuantity());
+            cartItem.setPrice(product.getPrice());
+            cartItem.setProductName(product.getName());
+            cartItem.setCart(cart);
+            cart.getCartItems().add(cartItem);
+        }
         CartResponse response=mapToResponse(cartRepository.save(cart));
         log.info("addItem completed");
         return response;
@@ -84,6 +94,8 @@ public class CartServiceImpl implements CartService {
         log.info("cart fetching");
         Cart cart = cartRepository.findByUserId(userId).orElseGet(()->new Cart());
         log.info("cart fetched");
+        if(quantity==0) return removeItem(userId,cartItemId);
+
         cart.getCartItems().forEach(item -> {
             if(item.getItemId().equals(cartItemId)){
                 InventoryResponse inventoryResponse=inventoryClientService.getInventory(item.getProductId());

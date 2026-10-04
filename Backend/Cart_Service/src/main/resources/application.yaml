@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Cart-Service
+    name: cart-service
   datasource:
     url: jdbc:postgresql://localhost:5432/cart_db
     username: postgres

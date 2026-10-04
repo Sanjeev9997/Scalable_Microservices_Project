@@ -22,7 +22,7 @@ public class AuthenticationService {
     }
 
     public JwtResponse login(LoginRequest request){
-        UserLoginDto user=userClient.getUserByEmail(request.getEmail());
+        UserLoginDto user=userClient.getUserByEmailForLogin(request.getEmail());
         if(user==null){
             throw new RuntimeException("Invalid email or password");
 
