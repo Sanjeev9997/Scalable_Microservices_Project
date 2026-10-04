@@ -97,7 +97,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
-
+      - name: Setup Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
       # =======================================================
       # DOCKER HUB LOGIN
       # =======================================================
